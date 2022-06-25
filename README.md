@@ -1,2 +1,8 @@
-# DINOMax
-Applying distillation with no labels at all - DINO ...
+DINOMax
+=====
+
+# Introduction
+
+# Usage 
+
+# Results

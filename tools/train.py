@@ -1,6 +1,9 @@
 import argparse
 import torch
 from src.utils import utils
+from src.engine.trainer import train_dino
+from pathlib import Path
+from torchvision import models as torchvision_models
 
 
 torchvision_archs = sorted(name for name in torchvision_models.__dict__

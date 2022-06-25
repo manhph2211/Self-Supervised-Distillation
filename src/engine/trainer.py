@@ -18,7 +18,8 @@ from src.utils.aug import DataAugmentationDINO
 from torchvision import models as torchvision_models
 from src.utils import utils
 import src.models.dino.vision_transformer as vits
-from src.models.dino.vision_transformer import DINOHead
+from src.models.dino.dino import DINOHead, MultiCropWrapper
+from src.optim.optim import LARS, cosine_scheduler
 
 
 def train_one_epoch(student, teacher, teacher_without_ddp, dino_loss, data_loader,
@@ -134,13 +135,13 @@ def train_dino(args):
         print(f"Unknow architecture: {args.arch}")
 
     # multi-crop wrapper handles forward with inputs of different resolutions
-    student = utils.MultiCropWrapper(student, DINOHead(
+    student = MultiCropWrapper(student, DINOHead(
         embed_dim,
         args.out_dim,
         use_bn=args.use_bn_in_head,
         norm_last_layer=args.norm_last_layer,
     ))
-    teacher = utils.MultiCropWrapper(
+    teacher = MultiCropWrapper(
         teacher,
         DINOHead(embed_dim, args.out_dim, args.use_bn_in_head),
     )
@@ -182,26 +183,26 @@ def train_dino(args):
     elif args.optimizer == "sgd":
         optimizer = torch.optim.SGD(params_groups, lr=0, momentum=0.9)  # lr is set by scheduler
     elif args.optimizer == "lars":
-        optimizer = utils.LARS(params_groups)  # to use with convnet and large batches
+        optimizer = LARS(params_groups)  # to use with convnet and large batches
     # for mixed precision training
     fp16_scaler = None
     if args.use_fp16:
         fp16_scaler = torch.cuda.amp.GradScaler()
 
     # ============ init schedulers ... ============
-    lr_schedule = utils.cosine_scheduler(
+    lr_schedule = cosine_scheduler(
         args.lr * (args.batch_size_per_gpu * utils.get_world_size()) / 256.,  # linear scaling rule
         args.min_lr,
         args.epochs, len(data_loader),
         warmup_epochs=args.warmup_epochs,
     )
-    wd_schedule = utils.cosine_scheduler(
+    wd_schedule = cosine_scheduler(
         args.weight_decay,
         args.weight_decay_end,
         args.epochs, len(data_loader),
     )
     # momentum parameter is increased to 1. during training with a cosine schedule
-    momentum_schedule = utils.cosine_scheduler(args.momentum_teacher, 1,
+    momentum_schedule = cosine_scheduler(args.momentum_teacher, 1,
                                                args.epochs, len(data_loader))
     print(f"Loss, optimizer and schedulers ready.")
 
