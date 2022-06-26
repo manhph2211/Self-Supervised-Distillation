@@ -1,3 +1,10 @@
+import torch
+import torch.nn as nn
+import numpy as np
+from torch.nn import functional as F
+import torch.distributed as dist
+
+
 class DINOLoss(nn.Module):
     def __init__(self, out_dim, ncrops, warmup_teacher_temp, teacher_temp,
                  warmup_teacher_temp_epochs, nepochs, student_temp=0.1,

@@ -1,5 +1,5 @@
 import random
-from PIL import ImageFilter, ImageOps
+from PIL import ImageFilter, ImageOps, Image
 from torchvision import transforms
 
 
@@ -22,15 +22,15 @@ class DataAugmentationDINO(object):
         self.global_transfo1 = transforms.Compose([
             transforms.RandomResizedCrop(224, scale=global_crops_scale, interpolation=Image.BICUBIC),
             flip_and_color_jitter,
-            utils.GaussianBlur(1.0),
+            GaussianBlur(1.0),
             normalize,
         ])
         # second global crop
         self.global_transfo2 = transforms.Compose([
             transforms.RandomResizedCrop(224, scale=global_crops_scale, interpolation=Image.BICUBIC),
             flip_and_color_jitter,
-            utils.GaussianBlur(0.1),
-            utils.Solarization(0.2),
+            GaussianBlur(0.1),
+            Solarization(0.2),
             normalize,
         ])
         # transformation for the local small crops
@@ -38,7 +38,7 @@ class DataAugmentationDINO(object):
         self.local_transfo = transforms.Compose([
             transforms.RandomResizedCrop(96, scale=local_crops_scale, interpolation=Image.BICUBIC),
             flip_and_color_jitter,
-            utils.GaussianBlur(p=0.5),
+            GaussianBlur(p=0.5),
             normalize,
         ])
 

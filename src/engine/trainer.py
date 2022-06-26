@@ -17,6 +17,7 @@ from torchvision import datasets
 from src.utils.aug import DataAugmentationDINO
 from torchvision import models as torchvision_models
 from src.utils import utils
+from src.losses.dino_loss import DINOLoss
 import src.models.dino.vision_transformer as vits
 from src.models.dino.dino import DINOHead, MultiCropWrapper
 from src.optim.optim import LARS, cosine_scheduler
