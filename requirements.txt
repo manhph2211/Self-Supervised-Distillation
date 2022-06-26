@@ -3,3 +3,4 @@ torchvision
 tqdm
 numpy
 pillow
+timm
