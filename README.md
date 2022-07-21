@@ -11,6 +11,8 @@ DINO is such an impressive model that utilizes the superpower of both self-super
 
 - When we deal with knowledge distillation, usually we mimic the output of a larger model as the teacher to compress the student. We can use both soft-label and hard-label to combine loss terms and enjoy the benefit of semi-supervised learning. Well, here DINO does not need labels and the teacher and student have the same network but different weights, sharing through Expotential Moving Avarage. 
 
+- In fact, the backpropagation process is only through student network, the teacher uses stop gradient! Also in teacher branch, there's one more module centering. 
+
 I strongly refered to the [official implementation of DINO](https://github.com/facebookresearch/dino) so many thanks to the authors for contributing a great project.
 
 <p align="center">
