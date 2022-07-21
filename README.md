@@ -5,6 +5,8 @@ Distillation with no labels :smile:
 
 In this repo, I want to implenment DINO with simple scenario that can be easily used to train and evaluate as well as observe the attention map of an image. 
 
+![image](https://user-images.githubusercontent.com/61444616/180137286-6c7551a8-df35-4bd1-bacd-3b54d4618ffb.png)
+
 DINO is such an impressive model that utilizes the superpower of both self-supervised learning and distillation applying for vision transformer models. Some of main points of [the paper](https://arxiv.org/abs/2104.14294):
 
 - There is NO supervision at all. This is an self-supervised learning task which is quite similar with contrastive learning except some small modifications. Loss function here is a standard cross-entropy loss.
@@ -38,9 +40,11 @@ export PYTHONPATH="path_to_repo/DINOMAX"
 ## Tools
 
 You might wannt train with:
+
 `python -m torch.distributed.launch --nproc_per_node=1 /tools/train.py --arch vit_small --data_path data/tiny-imagenet-200/train --output_dir /output`
 
 and try this for generating attention of a given image:
+
 `python /tools/visualize_attention.py --image_path data/tiny-imagenet-200/train/n02909870/images/n02909870_100.JPEG --pretrained_weights /output/checkpoint.pth`
 
 # Results
