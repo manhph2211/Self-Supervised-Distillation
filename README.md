@@ -5,7 +5,7 @@ Distillation with no labels :smile:
 
 In this repo, I want to implenment DINO with simple scenario that can be easily used to train and evaluate as well as observe the attention map of an image. 
 
-![image](https://user-images.githubusercontent.com/61444616/180137286-6c7551a8-df35-4bd1-bacd-3b54d4618ffb.png)
+<!-- ![image](https://user-images.githubusercontent.com/61444616/180137286-6c7551a8-df35-4bd1-bacd-3b54d4618ffb.png) -->
 
 DINO is such an impressive model that utilizes the superpower of both self-supervised learning and distillation applying for vision transformer models. Some of main points of [the paper](https://arxiv.org/abs/2104.14294):
 
