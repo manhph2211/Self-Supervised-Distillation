@@ -53,19 +53,12 @@ and try this for generating attention of a given image:
 ```
 @misc{https://doi.org/10.48550/arxiv.2104.14294,
   doi = {10.48550/ARXIV.2104.14294},
-  
   url = {https://arxiv.org/abs/2104.14294},
-  
   author = {Caron, Mathilde and Touvron, Hugo and Misra, Ishan and Jégou, Hervé and Mairal, Julien and Bojanowski, Piotr and Joulin, Armand},
-  
   keywords = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},
-  
   title = {Emerging Properties in Self-Supervised Vision Transformers},
-  
   publisher = {arXiv},
-  
   year = {2021},
-  
   copyright = {Creative Commons Attribution 4.0 International}
 }
 
