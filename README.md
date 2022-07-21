@@ -1,4 +1,4 @@
-Distillation with no labels :smile:
+DIstillation with NO labels :smile:
 =====
 
 # Introduction
@@ -61,5 +61,4 @@ and try this for generating attention of a given image:
   year = {2021},
   copyright = {Creative Commons Attribution 4.0 International}
 }
-
 ```
