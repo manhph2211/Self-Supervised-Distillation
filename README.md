@@ -5,8 +5,6 @@ DIstillation with NO labels :smile:
 
 In this repo, I want to implenment DINO with simple scenario that can be easily used to train and evaluate as well as observe the attention map of an image. 
 
-<!-- ![image](https://user-images.githubusercontent.com/61444616/180137286-6c7551a8-df35-4bd1-bacd-3b54d4618ffb.png) -->
-
 DINO is such an impressive model that utilizes the superpower of both self-supervised learning and distillation applying for vision transformer models. Some of main points of [the paper](https://arxiv.org/abs/2104.14294):
 
 - There is NO supervision at all. This is an self-supervised learning task which is quite similar with contrastive learning except some small modifications. Loss function here is a standard cross-entropy loss.
@@ -14,6 +12,10 @@ DINO is such an impressive model that utilizes the superpower of both self-super
 - When we deal with knowledge distillation, usually we mimic the output of a larger model as the teacher to compress the student. We can use both soft-label and hard-label to combine loss terms and enjoy the benefit of semi-supervised learning. Well, here DINO does not need labels and the teacher and student have the same network but different weights, sharing through Expotential Moving Avarage. 
 
 I strongly refered to the [official implementation of DINO](https://github.com/facebookresearch/dino) so many thanks to the authors for contributing a great project.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/61444616/180137286-6c7551a8-df35-4bd1-bacd-3b54d4618ffb.png" />
+</p>
 
 # Usage 
 
