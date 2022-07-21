@@ -47,7 +47,6 @@ and try this for generating attention of a given image:
 
 `python /tools/visualize_attention.py --image_path data/tiny-imagenet-200/train/n02909870/images/n02909870_100.JPEG --pretrained_weights /output/checkpoint.pth`
 
-# Results
 
 # Reference
 
