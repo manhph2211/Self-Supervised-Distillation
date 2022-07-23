@@ -17,7 +17,7 @@ I strongly refered to the [official implementation of DINO](https://github.com/f
 
 Main Flow             |  Main Algorithm
 :-------------------------:|:-------------------------:
-![](https://user-images.githubusercontent.com/61444616/180604765-cf707bb4-8171-4bab-9947-c32c7d5eaa4e.png)  |  ![](https://user-images.githubusercontent.com/61444616/180604817-303a6d43-9932-4518-8d99-5681c691f4aa.png)
+![](https://user-images.githubusercontent.com/61444616/180604765-cf707bb4-8171-4bab-9947-c32c7d5eaa4e.png)  |  ![](https://user-images.githubusercontent.com/61444616/180604874-b97fb8ba-196a-45dd-903c-1d043b9bc3fb.png)
 
 # Usage 
 
