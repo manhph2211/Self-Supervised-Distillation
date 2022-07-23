@@ -50,6 +50,8 @@ and try this for generating attention of a given image:
 
 `python /tools/visualize_attention.py --image_path path_to_image.JPEG --pretrained_weights /output/checkpoint.pth`
 
+# Results
+
 Original Images             |  Attention Vis
 :-------------------------:|:-------------------------:
 ![](https://user-images.githubusercontent.com/61444616/180604021-f0a1b7ef-7f59-4ad0-a9a0-cf4b1eae4123.png)  |  ![](https://user-images.githubusercontent.com/61444616/180604075-c1ae3daa-f915-4769-b993-0e186492b211.png)
