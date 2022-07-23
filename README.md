@@ -3,7 +3,7 @@ DIstillation with NO labels :smile:
 
 # Introduction
 
-In this repo, I want to implenment DINO with simple scenario that can be easily used to train and evaluate as well as observe the attention map of an image. 
+In this repo, I want to implement DINO with simple scenario that can be easily used to train and evaluate as well as observe the attention map of an image. 
 
 DINO is such an impressive model that utilizes the superpower of both self-supervised learning and distillation applying for vision transformer models. Some of main points of [the paper](https://arxiv.org/abs/2104.14294):
 
@@ -52,7 +52,7 @@ and try this for generating attention of a given image:
 
 # Results
 
-Original Images             |  Attention Vis
+Original Image              |  Attention Vis
 :-------------------------:|:-------------------------:
 ![](https://user-images.githubusercontent.com/61444616/180604021-f0a1b7ef-7f59-4ad0-a9a0-cf4b1eae4123.png)  |  ![](https://user-images.githubusercontent.com/61444616/180604075-c1ae3daa-f915-4769-b993-0e186492b211.png)
 
