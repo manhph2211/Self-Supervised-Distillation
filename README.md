@@ -7,7 +7,7 @@ In this repo, I want to implenment DINO with simple scenario that can be easily 
 
 DINO is such an impressive model that utilizes the superpower of both self-supervised learning and distillation applying for vision transformer models. Some of main points of [the paper](https://arxiv.org/abs/2104.14294):
 
-- There is NO supervision at all. This is an self-supervised learning task which is quite similar with contrastive learning except some small modifications. Loss function here is a standard cross-entropy loss.
+- There is NO supervision at all. This is an self-supervised learning task which is quite similar with contrastive learning except some small modifications. Global and local augmentation is specified in each branch. Also, loss function here is a standard cross-entropy loss.
 
 - When we deal with knowledge distillation, usually we mimic the output of a larger model as the teacher to compress the student. We can use both soft-label and hard-label to combine loss terms and enjoy the benefit of semi-supervised learning. Well, here DINO does not need labels and the teacher and student have the same network but different weights, sharing through Expotential Moving Avarage. 
 
@@ -15,9 +15,9 @@ DINO is such an impressive model that utilizes the superpower of both self-super
 
 I strongly refered to the [official implementation of DINO](https://github.com/facebookresearch/dino) so many thanks to the authors for contributing a great project.
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/61444616/180137286-6c7551a8-df35-4bd1-bacd-3b54d4618ffb.png" />
-</p>
+Main Flow             |  Main Algorithm
+:-------------------------:|:-------------------------:
+![](https://user-images.githubusercontent.com/61444616/180604765-cf707bb4-8171-4bab-9947-c32c7d5eaa4e.png)  |  ![](https://user-images.githubusercontent.com/61444616/180604599-024c31c7-e21b-4a56-bccf-b6cf6c37d612.png)
 
 # Usage 
 
@@ -38,7 +38,7 @@ Conda should be used in this stage to create new environment and install some re
 conda create -n dino python=3.9
 conda activate dino
 conda install --file requirements.txt
-export PYTHONPATH="path_to_repo/DINOMAX"
+export PYTHONPATH=path_to_repo/DINOMAX
 ```
 
 ## Tools
@@ -49,7 +49,11 @@ You might wannt train with:
 
 and try this for generating attention of a given image:
 
-`python /tools/visualize_attention.py --image_path data/tiny-imagenet-200/train/n02909870/images/n02909870_100.JPEG --pretrained_weights /output/checkpoint.pth`
+`python /tools/visualize_attention.py --image_path path_to_image.JPEG --pretrained_weights /output/checkpoint.pth`
+
+Original Images             |  Attention Vis
+:-------------------------:|:-------------------------:
+![](https://user-images.githubusercontent.com/61444616/180604021-f0a1b7ef-7f59-4ad0-a9a0-cf4b1eae4123.png)  |  ![](https://user-images.githubusercontent.com/61444616/180604075-c1ae3daa-f915-4769-b993-0e186492b211.png)
 
 
 # Reference
